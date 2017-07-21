@@ -1,0 +1,14 @@
+machine:
+  python:
+    version: pypy-2.2.1
+dependencies:
+  pre:
+    - pip install mkdocs
+test:
+  override:
+    - mkdocs build --clean
+deployment:
+  master:
+    branch: master
+    commands:
+      - aws s3 sync ./site s3://accessibility-gutools-co-uk --delete
