@@ -1,0 +1,17 @@
+{
+  "name": "guardian-accessibility",
+  "description": "Patterns and Guidelines for Accessibility and Inclusive Design at the Guardian.",
+  "version": "0.0.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guardian/guardian-accessibility"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guardian/guardian-accessibility/issues"
+  },
+  "homepage": "https://github.com/guardian/guardian-accessibility#readme",
+  "scripts": {}
+}
