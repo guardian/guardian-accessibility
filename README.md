@@ -26,3 +26,28 @@ The site will then run on http://127.0.0.1:8000
 ## Deploy
 
 Merge changes to master. These will then be automatically deployed via [Circle CI](https://circleci.com/gh/guardian/guardian-accessibility)
+
+## TODO
+
+- [] Set up a CNAME
+- [] Add certificate
+
+Add this back into `cfn.yml`
+
+```
+
+ACMCertArn:
+    Description: ACM certificate ARN for CloudFront
+    Type: String
+
+and
+
+CFDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        ViewerCertificate:
+            AcmCertificateArn: !Ref 'ACMCertArn'
+            MinimumProtocolVersion: TLSv1
+            SslSupportMethod: sni-only
+```

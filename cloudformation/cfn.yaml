@@ -1,0 +1,84 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Tools Index
+Parameters:
+  Domain:
+    Description: gutools.co.uk sub-domain to serve
+    Type: String
+Resources:
+  StaticContentBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: "Retain"
+    Properties:
+      BucketName: "accessibility-gutools-co-uk"
+      AccessControl: Private
+      WebsiteConfiguration:
+        IndexDocument: "index.html"
+      CorsConfiguration:
+        CorsRules:
+          - AllowedMethods:
+            - GET
+            AllowedOrigins:
+              - "*"
+            AllowedHeaders:
+              - "*"
+  StaticContentBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: StaticContentBucket
+      PolicyDocument:
+        Id: AccessibilityBucketPolicy
+        Statement:
+        - Action: ['s3:GetObject']
+          Effect: Allow
+          Principal: "*"
+          Resource:
+            Fn::Join: ['', ['arn:aws:s3:::', {Ref: StaticContentBucket}, '/*' ]]
+  CFDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+        - !Ref 'Domain'
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: "false"
+          TargetOriginId: "guardian-accessibility"
+          ViewerProtocolPolicy: redirect-to-https
+        DefaultRootObject: "index.html"
+        Enabled: "true"
+        Origins:
+        - DomainName:
+            Fn::Join: ['', [{Ref: StaticContentBucket}, '.s3.amazonaws.com' ]]
+          Id: "guardian-accessibility"
+          CustomOriginConfig:
+            OriginProtocolPolicy: https-only
+  CircleCIUser:
+    Type: AWS::IAM::User
+    Properties:
+      Policies:
+        - PolicyName: CircleCIPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "s3:PutObject"
+                  - "s3:ListBucket"
+                  - "s3:ListObjects"
+                  - "s3:DeleteObject"
+                Resource:
+                  - Fn::Join: ['', ['arn:aws:s3:::', {Ref: StaticContentBucket} ]]
+                  - Fn::Join: ['', ['arn:aws:s3:::', {Ref: StaticContentBucket}, '/*' ]]
+  CircleCIKeys:
+      Type: "AWS::IAM::AccessKey"
+      Properties:
+        UserName: {"Ref": "CircleCIUser"}
+        Serial: 1
+Outputs:
+  CircleCIAWSID:
+    Value:
+      Ref: "CircleCIKeys"
+  CircleCIAWSSecret:
+    Value:
+      Fn::GetAtt: ["CircleCIKeys", "SecretAccessKey"]
