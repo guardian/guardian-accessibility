@@ -6,6 +6,8 @@ https://accessibility-gutools-co-uk.s3-eu-west-1.amazonaws.com/index.html
 
 Slack: #accessibility
 
+[![CircleCI](https://circleci.com/gh/guardian/guardian-accessibility/tree/master.svg?style=svg)](https://circleci.com/gh/guardian/guardian-accessibility/tree/master)
+
 ## Setup
 
 Requires Python & Pip installed
@@ -14,6 +16,18 @@ Install mkdocs:
 ```
 pip install mkdocs
 ```
+
+## Edit, Add
+
+### Add pages
+
+- In `/docs`, add `.md` files in `/guidelines` or `/patterns`
+- Add the page in `mkdocs.yml`
+
+### Add Sections
+
+- In `/docs`, add folders
+- Add the section in `mkdocs.yml`
 
 ## Run locally
 
@@ -29,8 +43,8 @@ Merge changes to master. These will then be automatically deployed via [Circle C
 
 ## TODO
 
-- [] Set up a CNAME
-- [] Add certificate
+- [ ] Set up a CNAME
+- [ ] Add certificate
 
 Add this back into `cfn.yml`
 
