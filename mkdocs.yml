@@ -1,6 +1,6 @@
 site_name: Guardian Accessibility and Inclusive Design
 site_url: https://accessibility-gutools-co-uk.s3-eu-west-1.amazonaws.com/
-repo_url: https://github.com/guardian/guardian-accsesibility
+repo_url: https://github.com/guardian/guardian-accessibility
 site_description: Patterns and Guidelines for Accessibility and Inclusive Design at the Guardian.
 pages:
   - Home: index.md
