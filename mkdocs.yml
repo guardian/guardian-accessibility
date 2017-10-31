@@ -7,6 +7,7 @@ pages:
   - Patterns:
     - Example pattern: 'patterns/example-pattern.md'
   - Guidelines:
-    - Web: 'guidelines/web.md'
+    - Web: 
+      - HTML Lang attribute: 'guidelines/web/lang-attribute.md'
     - Apps: 'guidelines/apps.md'
 theme: readthedocs
