@@ -1,13 +1,13 @@
 # HTML `lang` attribute
 
-`lang` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that defines the language of an element. It serves to tell browsers what language an elements non-editable (read-only) content is written in, or what language an editable element should be written in.
+`lang` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that defines the language of an element. It serves to tell browsers what language an element's non-editable (read-only) content is written in, or what language an editable element should be written in.
 
 The value of lang is an [ISO 2 letter language code](https://www.sitepoint.com/iso-2-letter-language-codes/).
 
 The `lang` attribute should *always* be set, as a user's computer will use their system language setting as a default. This may result in incorrect settings being used in their assistive software.
 
 ## Use
-The `lang` attriute usually added to the `<html>` element to set the language of an entire site, but can be added to any element. This is useful if your site contains many languages. This example will set the global language of the page to `en` (English) and the language of a paragraph to `es` (Spanish):
+The `lang` attribute is usually added to the `<html>` element to set the language of an entire site, but can be added to any element. This is useful if your site contains many languages. This example will set the global language of the page to `en` (English) and the language of a paragraph to `es` (Spanish):
 
 ```html
 <html lang="en">
@@ -20,7 +20,7 @@ The `lang` attriute usually added to the `<html>` element to set the language of
 ```
 
 You can also use the CSS psuedo-class `:lang` to select elements by language.
-This example will select all content in the `header` element where the lang is set to `en` (English) and set the correct rules for quotation marks:
+This example will select all content in the `header` element where the `lang` attribute is set to `en` (English) and set the correct rules for quotation marks:
 
 ```css
 .header:lang(en) {
