@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Tools Index
+Description: accessibility.gutools.co.uk
 Parameters:
   Domain:
     Description: gutools.co.uk sub-domain to serve
@@ -10,6 +10,7 @@ Resources:
     DeletionPolicy: "Retain"
     Properties:
       BucketName: "accessibility-gutools-co-uk"
+      AccessControl: Private
       WebsiteConfiguration:
         IndexDocument: "index.html"
       CorsConfiguration:
@@ -40,18 +41,28 @@ Resources:
         Aliases:
         - !Ref 'Domain'
         DefaultCacheBehavior:
-          ForwardedValues:
-            QueryString: "false"
-          TargetOriginId: "guardian-accessibility"
-          ViewerProtocolPolicy: redirect-to-https
-        DefaultRootObject: "index.html"
+            AllowedMethods:
+            - DELETE
+            - GET
+            - HEAD
+            - OPTIONS
+            - PATCH
+            - POST
+            - PUT
+            TargetOriginId: 'guardian-accessibility'
+            ForwardedValues:
+              QueryString: 'false'
+              Cookies:
+                Forward: none
+            ViewerProtocolPolicy: https-only
         Enabled: "true"
         Origins:
-        - DomainName:
-            Fn::Join: ['', [{Ref: StaticContentBucket}, '.s3.amazonaws.com' ]]
+        - DomainName: !Sub '${StaticContentBucket}.s3-website-eu-west-1.amazonaws.com'
           Id: "guardian-accessibility"
           CustomOriginConfig:
-            OriginProtocolPolicy: https-only
+            HTTPPort: '80'
+            HTTPSPort: '443'
+            OriginProtocolPolicy: http-only
   CircleCIUser:
     Type: AWS::IAM::User
     Properties:
