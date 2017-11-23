@@ -1,0 +1,14 @@
+stacks:
+- frontend
+deployments:
+  keys:
+    type: aws-s3
+    parameters:
+      cacheControl: max-age=600
+      publicReadAcl: true
+      prefixPackage: false
+      prefixStack: false
+      bucket: accessibility-gutools-co-uk
+      prefixStage: false
+regions:
+- eu-west-1
