@@ -9,5 +9,6 @@ pages:
   - Guidelines:
     - Web: 
       - HTML Lang attribute: 'guidelines/web/lang-attribute.md'
+      - Use the correct HTML element: 'guidelines/web/correct-element.md'
     - Apps: 'guidelines/apps.md'
 theme: readthedocs
