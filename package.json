@@ -13,5 +13,12 @@
     "url": "https://github.com/guardian/guardian-accessibility/issues"
   },
   "homepage": "https://github.com/guardian/guardian-accessibility#readme",
-  "scripts": {}
+  "scripts": {
+     "riffraff-artefact": "VERBOSE=true ARTEFACT_PATH=$PWD riffraff-artefact"
+  },
+  "isAwsLambda": "true",
+  "projectName": "tools::accessibility.gutools",
+  "riffraffFile": "./riff-raff.yaml",
+  "cloudformation": false,
+  "buildDir": "site"
 }
