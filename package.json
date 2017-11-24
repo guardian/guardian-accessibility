@@ -14,11 +14,14 @@
   },
   "homepage": "https://github.com/guardian/guardian-accessibility#readme",
   "scripts": {
-     "riffraff-artefact": "VERBOSE=true ARTEFACT_PATH=$PWD riffraff-artefact"
+    "riffraff-artefact": "VERBOSE=true ARTEFACT_PATH=$PWD riffraff-artefact"
   },
   "isAwsLambda": "true",
   "projectName": "tools::accessibility.gutools",
   "riffraffFile": "./riff-raff.yaml",
   "cloudformation": false,
-  "buildDir": "site"
+  "buildDir": "site",
+  "dependencies": {
+    "node-riffraff-artefact": "^2.0.1"
+  }
 }
