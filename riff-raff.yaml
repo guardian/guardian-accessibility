@@ -1,7 +1,7 @@
 stacks:
 - frontend
 deployments:
-  keys:
+  site:
     type: aws-s3
     parameters:
       cacheControl: max-age=600
