@@ -63,32 +63,3 @@ Resources:
             HTTPPort: '80'
             HTTPSPort: '443'
             OriginProtocolPolicy: http-only
-  CircleCIUser:
-    Type: AWS::IAM::User
-    Properties:
-      Policies:
-        - PolicyName: CircleCIPolicy
-          PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              - Effect: "Allow"
-                Action:
-                  - "s3:PutObject"
-                  - "s3:ListBucket"
-                  - "s3:ListObjects"
-                  - "s3:DeleteObject"
-                Resource:
-                  - Fn::Join: ['', ['arn:aws:s3:::', {Ref: StaticContentBucket} ]]
-                  - Fn::Join: ['', ['arn:aws:s3:::', {Ref: StaticContentBucket}, '/*' ]]
-  CircleCIKeys:
-      Type: "AWS::IAM::AccessKey"
-      Properties:
-        UserName: {"Ref": "CircleCIUser"}
-        Serial: 1
-Outputs:
-  CircleCIAWSID:
-    Value:
-      Ref: "CircleCIKeys"
-  CircleCIAWSSecret:
-    Value:
-      Fn::GetAtt: ["CircleCIKeys", "SecretAccessKey"]
