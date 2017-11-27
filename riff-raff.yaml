@@ -5,7 +5,6 @@ deployments:
     type: aws-s3
     parameters:
       cacheControl: max-age=600
-      publicReadAcl: true
       prefixPackage: false
       prefixStack: false
       bucket: accessibility-gutools-co-uk
