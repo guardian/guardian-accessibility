@@ -39,7 +39,7 @@ The site will then run on http://127.0.0.1:8000
 
 ## Deploy
 
-Merge changes to master. These will then be automatically deployed via [Circle CI](https://circleci.com/gh/guardian/guardian-accessibility)
+Merge changes to master. These will then be automatically deployed via Teamcity (tools - accessibility_gutools) and riff-raff (tools::accessibility.gutools).
 
 ## TODO
 
