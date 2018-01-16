@@ -23,5 +23,5 @@ The `alt` attribute is almost always used on `<img>` elements, but can also be u
 - Describe the contents of the image as best as possible.
 - Repeat any text contained in an image
 - Screen readers will say that it's an image, so there's no need to write "Picture of" or "Image of" before the description.
-- Logos should be written as the comany name, as opposed to describing what's in them, unless the context requires it. e.g. In an article about a company's new branding.
+- Logos should be written as the company name, as opposed to describing what's in them, unless the context requires it. e.g. In an article about a company's new branding.
 - Do not use it as a dumping ground for SEO terms, alt text is to make it easier for users, better context for search engines is a result of effective `alt` text, not the other way around.
