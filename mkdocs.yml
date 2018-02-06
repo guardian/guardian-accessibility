@@ -5,7 +5,7 @@ site_description: Patterns and Guidelines for Accessibility and Inclusive Design
 pages:
   - Home: index.md
   - Patterns:
-    - Alt text: 'patterns/alt-text.md'
+    - Alt text: 'guidelines/patterns/alt-text.md'
   - Guidelines:
     - Web: 
       - HTML Lang attribute: 'guidelines/web/lang-attribute.md'
