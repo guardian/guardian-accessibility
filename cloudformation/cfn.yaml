@@ -4,6 +4,9 @@ Parameters:
   Domain:
     Description: gutools.co.uk sub-domain to serve
     Type: String
+  ACMCertArn:
+    Description: ACM certificate ARN for CloudFront
+    Type: String
 Resources:
   StaticContentBucket:
     Type: AWS::S3::Bucket
@@ -63,3 +66,7 @@ Resources:
             HTTPPort: '80'
             HTTPSPort: '443'
             OriginProtocolPolicy: http-only
+        ViewerCertificate:
+          AcmCertificateArn: !Ref 'ACMCertArn'
+          MinimumProtocolVersion: TLSv1
+          SslSupportMethod: sni-only
