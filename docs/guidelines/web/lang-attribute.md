@@ -2,7 +2,7 @@
 
 `lang` is a [global attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes) that defines the language of an element. It serves to tell browsers what language an element's non-editable (read-only) content is written in, or what language an editable element should be written in.
 
-The value of lang is an [ISO 2 letter language code](https://www.sitepoint.com/iso-2-letter-language-codes/).
+The value of lang is an [ISO 2 letter language code](https://www.sitepoint.com/iso-2-letter-language-codes/) or a [4 letter ISO 639-1 code](https://www.andiamo.co.uk/resources/iso-language-codes) which also separates dialects within a language.
 
 The `lang` attribute should *always* be set, as a user's computer will use their system language setting as a default. This may result in incorrect settings being used in their assistive software.
 
