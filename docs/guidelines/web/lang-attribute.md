@@ -31,5 +31,5 @@ This example will select all content in the `header` element where the `lang` at
 ## Accessibility considerations
 
 The `lang` attribute allows screen readers and other assistive software to account for differences in language. Here are some considerations:
-- a screen reader or speech recognition software will need to change how it interprets the pronunciation of words in order to make sense to a native speaker.
-- An on-screen keyboard will need to configure itself correctly to allow typing of accents/letters in a language (e.g. ç, ê, ß)
+* a screen reader or speech recognition software will need to change how it interprets the pronunciation of words in order to make sense to a native speaker.
+* An on-screen keyboard will need to configure itself correctly to allow typing of accents/letters in a language (e.g. ç, ê, ß)
