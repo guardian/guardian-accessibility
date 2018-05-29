@@ -11,4 +11,9 @@ pages:
       - HTML Lang attribute: 'guidelines/web/lang-attribute.md'
       - Use the correct HTML element: 'guidelines/web/correct-element.md'
     - Apps: 'guidelines/apps.md'
+  - Testing:
+    - Web:
+      - Keyboard navigation: 'testing/web/keyboard-navigation.md'
+      - Screen readers: 'testing/web/screen-readers.md'
+      - Colour contrast: 'testing/web/colour-contrast.md'
 theme: readthedocs
