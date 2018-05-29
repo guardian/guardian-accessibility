@@ -15,4 +15,5 @@ pages:
     - Web:
       - Keyboard navigation: 'testing/web/keyboard-navigation.md'
       - Screen readers: 'testing/web/screen-readers.md'
+      - Colour contrast: 'testing/web/colour-contrast.md'
 theme: readthedocs
