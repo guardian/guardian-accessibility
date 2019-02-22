@@ -1,6 +1,6 @@
 # Colour contrast
 
-We must always meet the WCAG 2.0 AAA standard for colour contrast.
+We must always meet the WCAG 2.1 AA standard for colour contrast.
 
 The standard requires a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text.
 
